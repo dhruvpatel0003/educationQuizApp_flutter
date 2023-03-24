@@ -1,0 +1,24 @@
+import 'package:education_app/config/themes/app_dark_theme.dart';
+import 'package:education_app/config/themes/app_light_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class ThemeController extends GetxController{
+
+  late ThemeData _darkTheme;
+  late ThemeData _lightTheme;
+
+  @override
+  void onInit(){//before the app gets boots up
+    initializedThemeData();
+    super.onInit();
+  }
+
+  initializedThemeData(){
+    _darkTheme = DarkTheme().buildDarkTheme();
+    _lightTheme = LightTheme().buildLightTheme();
+  }
+
+  ThemeData get dartTheme => _darkTheme;
+  ThemeData get lightTheme => _lightTheme;
+}
